@@ -11,7 +11,7 @@ namespace LINQ_ProductReviewManagementProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose Option to Perform the Operation\n1.Insert 25 Records\n2.Retrieve Top 3 Records\n3.Exit");
+                Console.WriteLine("Choose Option to Perform the Operation\n1.Insert 25 Records\n2.Retrieve Top 3 Records\n3.Retrieve Records Rating grater than 3 \n4.Exit");
                 int option=Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -45,13 +45,16 @@ namespace LINQ_ProductReviewManagementProblem
                         Console.WriteLine("------------------------------");
                         foreach (var data in products)
                         {
-                            Console.WriteLine(data.ProductId + "  " + data.UserId + "  " + data.Rating + "  " + data.Review + "  " + data.IsLike);
+                            Console.WriteLine(data.ProductId + "\t" + data.UserId + "\t" + data.Rating + "\t" + data.Review + "\t" + data.IsLike);
                         }
                         break;
                         case 2:
                         review.RetrieveTop3Records(products);
                         break;
                         case 3:
+                        review.RetrieveRecordsGreaterThan3Ratings(products);
+                        break;
+                        case 4:
                         flag= false;
                         break;
                 }
