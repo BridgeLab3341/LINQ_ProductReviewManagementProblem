@@ -34,5 +34,15 @@ namespace LINQ_ProductReviewManagementProblem
                 Console.WriteLine($"ProductID:- {data.ProductId} \t UserID:- {data.UserId} \t Rating:- {data.Rating} " + $"\t Review:- {data.Review} \t IsLike:- {data.IsLike}");
             }
         }
+        public void RetrieveCountofReview(List<ProductsReview> list)
+        {
+            var records=list.GroupBy(x => x.ProductId).Select(x => new {ProductId=x.Key,Count=x.Count()});
+            Console.WriteLine("Retrieved Records By Counting the Review for Each Id");
+            Console.WriteLine("=====================================================");
+            foreach( var data in records)
+            {
+                Console.WriteLine($"ProductID:- { data.ProductId} \t Count:- { data.Count}");
+            }
+        }
     }
 }

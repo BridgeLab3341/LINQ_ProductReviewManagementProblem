@@ -11,7 +11,7 @@ namespace LINQ_ProductReviewManagementProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose Option to Perform the Operation\n1.Insert 25 Records\n2.Retrieve Top 3 Records\n3.Retrieve Records Rating grater than 3 \n4.Exit");
+                Console.WriteLine("Choose Option to Perform the Operation\n1.Insert 25 Records\n2.Retrieve Top 3 Records\n3.Retrieve Records Rating grater than 3\n4.Count By Review\n5.Exit");
                 int option=Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -54,7 +54,10 @@ namespace LINQ_ProductReviewManagementProblem
                         case 3:
                         review.RetrieveRecordsGreaterThan3Ratings(products);
                         break;
-                        case 4:
+                    case 4:
+                        review.RetrieveCountofReview(products);
+                        break;
+                        case 5:
                         flag= false;
                         break;
                 }
